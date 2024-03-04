@@ -20,3 +20,4 @@ class News(SqlAlchemyBase, SerializerMixin):
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("users.id"))
     user = orm.relationship('User')
+    is_published = sqlalchemy.Column(sqlalchemy.Boolean, default=True)

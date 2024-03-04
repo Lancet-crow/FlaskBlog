@@ -18,7 +18,13 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+import sys
+
+sys.path.insert(0, 'Путь к папке вашего проекта')
+from data.db_session import SqlAlchemyBase
+import data.__all_models
+
+target_metadata = SqlAlchemyBase.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
